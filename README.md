@@ -30,8 +30,9 @@ is not.
 
 ## Requirements
 
-- Swift tools version 5.9+ (uses `Target.directoryURL` /
-  `PluginContext.pluginWorkDirectoryURL`)
+- Swift tools version **6.1+** in the consuming package (the plugin uses
+  the URL-based `Target.directoryURL` / `PluginContext.pluginWorkDirectoryURL`
+  / `Command.buildCommand` APIs introduced in PackagePlugin 6.0–6.1)
 - macOS host with Xcode command-line tools installed (any recent Xcode)
 
 The plugin itself is host-side only — your consuming target can ship to
@@ -42,7 +43,7 @@ any Apple platform that supports Metal at runtime.
 In your consuming package's `Package.swift`:
 
 ```swift
-// swift-tools-version: 5.9
+// swift-tools-version: 6.1
 import PackageDescription
 
 let package = Package(
